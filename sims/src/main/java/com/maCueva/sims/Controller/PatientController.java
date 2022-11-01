@@ -1,0 +1,27 @@
+package com.maCueva.sims.Controller;
+
+import java.util.List;
+import com.maCueva.sims.Entity.PatientEntity;
+import com.maCueva.sims.Service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/patient")
+public class PatientController {
+    @Autowired
+    PatientService pserv;
+
+    //create
+    @PostMapping("/create")
+    public PatientEntity register(@RequestBody PatientEntity patient){
+        return pserv.register(patient);
+    }
+
+    @GetMapping("/displayPatients")
+    public List<PatientEntity>displayAll(){
+        return pserv.displayAll();
+    }
+
+
+}
