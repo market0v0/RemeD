@@ -20,4 +20,6 @@ public class PatientService {
     public List<PatientEntity>displayAll(){
         return prepo.findAll();
     }
+    
+    
 }
