@@ -1,0 +1,28 @@
+package com.maCueva.sims.Service;
+import java.util.List;
+import com.maCueva.sims.Entity.UserEntity;
+import com.maCueva.sims.Repository.UserRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+
+public class UserService {
+    @Autowired
+    UserRepository urepo;
+
+    //create
+    public UserEntity register(UserEntity User){
+       return urepo.save(User);
+    }
+    
+    //log in
+
+    
+    
+    //display
+    public List<UserEntity> displayAll(){
+        return urepo.findAll();
+    }
+}

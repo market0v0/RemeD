@@ -1,0 +1,19 @@
+#Mark Vincent Cueva bsit 3 g1
+server.Port=8090
+#Setup JDBC connection
+spring.datasource.url=jdbc:mysql://localhost:3307/db_health1?useSSL=false
+
+#Setup db login credentials
+spring.datasource.username=root
+spring.datasource.password=mark
+
+#Auto create tables based on entities
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.show-sql=true
+#for stack trace error not to appear 
+server.error.include-stacktrace=never
+
+

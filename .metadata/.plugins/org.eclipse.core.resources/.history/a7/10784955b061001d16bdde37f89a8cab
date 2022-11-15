@@ -1,0 +1,42 @@
+package com.maCueva.sims.Service;
+import java.util.List;
+import com.maCueva.sims.Entity.UserEntity;
+import com.maCueva.sims.Repository.UserRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+
+public class UserService {
+    @Autowired
+    UserRepository urepo;
+
+    //create
+    public UserEntity register(UserEntity User){
+       return urepo.save(User);
+    }
+    
+    //log in
+	public boolean Login(String username,password) throws Exception{
+	    UserEntity student = new UserEntity(); //creating an instance of student
+        
+        try {
+            //Search the ID number of the student
+            student = urepo.findByUsername(username).get();
+            
+            //update the record
+            
+        }catch(NoSuchElementException nex) {
+            //throws an error if the id does not exist
+            throw new Exception("ID Number "+ id + " does not exist!");
+        }
+		
+}
+    
+    
+    //display
+    public List<UserEntity> displayAll(){
+        return urepo.findAll();
+    }
+}

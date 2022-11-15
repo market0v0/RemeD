@@ -1,0 +1,35 @@
+package com.maCueva.sims.Controller;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+
+import com.maCueva.sims.Entity.UserEntity;
+import com.maCueva.sims.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/User")
+public class UserController {
+    @Autowired
+    UserService userv;
+
+    //create
+    @PostMapping("/createUser")
+    public UserEntity register(@RequestBody UserEntity user){
+        return userv.register(user);
+    }
+    
+    @GetMapping("/login")
+    public String Login(@RequestParam String username,@RequestParam String password) throws Exception{
+       return userv.Login(username,password);
+     }
+    
+    
+    @GetMapping("/displayUser")
+    public List<UserEntity>displayAll(){
+        return userv.displayAll();
+    }
+
+
+}
