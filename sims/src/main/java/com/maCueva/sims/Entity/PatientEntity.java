@@ -1,6 +1,8 @@
 package com.maCueva.sims.Entity;
 
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,40 +10,55 @@ import javax.persistence.*;
 public class PatientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(unique=true)
-    private String username;
-    private String password;
-
-
+    private int PatientId;
+    
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "UserId")
+	private UserEntity User;
+    private double weight;
+    private String height;
 
     public PatientEntity() {
     }
 
-    public PatientEntity(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
+	public PatientEntity(int patientId, UserEntity user, double weight, String height) {
+		super();
+		PatientId = patientId;
+		User = user;
+		this.weight = weight;
+		this.height = height;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getPatientId() {
+		return PatientId;
+	}
 
+	public void setPatientId(int patientId) {
+		PatientId = patientId;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public UserEntity getUser() {
+		return User;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setUser(UserEntity user) {
+		User = user;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public double getWeight() {
+		return weight;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
+	}
+
 }

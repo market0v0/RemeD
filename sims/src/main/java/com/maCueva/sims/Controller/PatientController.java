@@ -13,7 +13,7 @@ public class PatientController {
     PatientService pserv;
 
     //create
-    @PostMapping("/create")
+    @PostMapping("/createPatient")
     public PatientEntity register(@RequestBody PatientEntity patient){
         return pserv.register(patient);
     }
