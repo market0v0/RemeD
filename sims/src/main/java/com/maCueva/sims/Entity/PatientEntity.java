@@ -1,8 +1,6 @@
 package com.maCueva.sims.Entity;
 
 
-import java.util.Set;
-
 import javax.persistence.*;
 
 @Entity
@@ -10,10 +8,9 @@ import javax.persistence.*;
 public class PatientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int PatientId;
+    private int patientId;
     
     @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "UserId")
 	private UserEntity User;
     private double weight;
     private String height;
@@ -23,18 +20,18 @@ public class PatientEntity {
 
 	public PatientEntity(int patientId, UserEntity user, double weight, String height) {
 		super();
-		PatientId = patientId;
+		this.patientId = patientId;
 		User = user;
 		this.weight = weight;
 		this.height = height;
 	}
 
 	public int getPatientId() {
-		return PatientId;
+		return patientId;
 	}
 
 	public void setPatientId(int patientId) {
-		PatientId = patientId;
+		this.patientId = patientId;
 	}
 
 	public UserEntity getUser() {

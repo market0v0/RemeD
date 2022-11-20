@@ -20,20 +20,28 @@ public class UserService {
     }
     
     //log in
-    public String Login( String username,String password) throws Exception{
+    public int Login( String username,String password) throws Exception{
     	int valid = 0;
     	String pass = urepo.findByUsername(username).getPassword();
         try {        	
         if(urepo.findByUsername(username)!= null) {        	
         		if(pass.equals(password)) {
-        		return password;
+        			if(urepo.findByUsername(username).getUserType() == 1) {
+        				valid = 1;
+        				return valid;
+        			}
+        			else {
+        				valid = 2;
+        				return valid;
+        			}
+        		
         		}
         }	
         }catch(NoSuchElementException nex) {
             //throws an error if the id does not exist
             throw new Exception("ID Number "+ username + " does not exist!");
         }
-		return "l= "+pass+" i= "+password;
+		return valid;
         
      }
 
