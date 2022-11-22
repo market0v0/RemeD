@@ -3,13 +3,13 @@ package com.maCueva.sims.Entity;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
-import Projecthelper.Address;
+
 
 import javax.persistence.Id;
 import javax.persistence.OneToMany;

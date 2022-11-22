@@ -1,6 +1,5 @@
 package com.maCueva.sims.Repository;
 
-import com.maCueva.sims.Entity.DoctorEntity;
 import com.maCueva.sims.Entity.UserEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
