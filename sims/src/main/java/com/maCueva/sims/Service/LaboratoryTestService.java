@@ -1,4 +1,4 @@
-package com.ramirezremed.RemeD.Service;
+package com.maCueva.sims.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -6,8 +6,10 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ramirezremed.RemeD.Entity.LaboratoryTestEntity;
-import com.ramirezremed.RemeD.Repository.LaboratoryTestRepository;
+
+import com.maCueva.sims.Entity.LaboratoryTestEntity;
+import com.maCueva.sims.Repository.LaboratoryTestRepository;
+
 
 @Service
 public class LaboratoryTestService {

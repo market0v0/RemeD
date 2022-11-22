@@ -1,5 +1,5 @@
 
-package com.ramirezremed.RemeD.Entity;
+package com.maCueva.sims.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.ramirezremed.RemeD.Controller;
+package com.maCueva.sims.Controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ramirezremed.RemeD.Entity.ConsultationEntity;
-import com.ramirezremed.RemeD.Service.ConsultationService;
+import com.maCueva.sims.Entity.ConsultationEntity;
+import com.maCueva.sims.Service.ConsultationService;
 
 
 @RestController
