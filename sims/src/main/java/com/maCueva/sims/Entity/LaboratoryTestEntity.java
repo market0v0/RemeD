@@ -23,7 +23,7 @@ public class LaboratoryTestEntity {
 	
 	
 	
-	@OneToOne(mappedBy = "labtest")
+	@OneToOne(cascade= CascadeType.MERGE)
 	private ResultEntity result;
 	
 	
