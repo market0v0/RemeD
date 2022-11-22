@@ -1,4 +1,4 @@
-package com.ramirezremed.RemeD.Entity;
+package com.maCueva.sims.Entity;
 
 
 import java.util.Set;
@@ -18,13 +18,13 @@ public class LaboratoryTestEntity {
 	private String labtesttype;
 	private String labteststatus;
 	
-	@OneToMany(cascade= CascadeType.MERGE)
+	/*@OneToMany(cascade= CascadeType.MERGE)
 	private Set <ScheduleEntity> schedule;
 	
 	
 	
 	@OneToOne(mappedBy = "labtest")
-	private ResultEntity result;
+	private ResultEntity result;*/
 	
 	
 	public LaboratoryTestEntity() {
