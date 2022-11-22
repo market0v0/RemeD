@@ -19,6 +19,8 @@ public class ScheduleEntity {
 	private String schedulestatus;
 	
 	public ScheduleEntity () {};
+	
+	
 	public ScheduleEntity(int scheduleid, String scheduledate, String scheduletime, String schedulestatus) {
 		super();
 		this.scheduleid = scheduleid;
@@ -26,6 +28,8 @@ public class ScheduleEntity {
 		this.scheduletime = scheduletime;
 		this.schedulestatus = schedulestatus;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "ScheduleEntity [scheduleid=" + scheduleid + ", scheduledate=" + scheduledate + ", scheduletime="

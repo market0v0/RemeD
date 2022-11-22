@@ -14,16 +14,24 @@ public class PatientEntity {
 	private UserEntity User;
     private double weight;
     private String height;
+    
+    @OneToMany
+    private Set <ConsultationEntity> consultation;
+    
+    @OneToMany
+    private Set <LaboratoryTestEntity> labtest;
 
     public PatientEntity() {
     }
 
-	public PatientEntity(int patientId, UserEntity user, double weight, String height) {
+	public PatientEntity(int patientId, UserEntity user, double weight, String height, Set<ConsultationEntity> consultation, Set<LaboratoryTestEntity> labtest) {
 		super();
 		this.patientId = patientId;
 		User = user;
 		this.weight = weight;
 		this.height = height;
+		this.consultation = consultation;
+		this.labtest = labtest;
 	}
 
 	public int getPatientId() {
@@ -56,6 +64,24 @@ public class PatientEntity {
 
 	public void setHeight(String height) {
 		this.height = height;
+	}
+	
+	public Set<ConsultationEntity> getConsultation() {
+		return consultation;
+	}
+
+
+	public void setConsultation(Set<ConsultationEntity> consultation) {
+		this.consultation = consultation;
+	}
+	
+	public Set<LaboratoryTestEntity> getLabtest() {
+		return labtest;
+	}
+
+
+	public void setLabtest(Set<LaboratoryTestEntity> labtest) {
+		this.labtest = labtest;
 	}
 
 }

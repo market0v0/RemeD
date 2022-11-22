@@ -20,6 +20,8 @@ public class ConsultationEntity {
 	private String consultationresult;
 	
 	
+	@OneToMany(cascade= CascadeType.MERGE)
+	private Set <ScheduleEntity> schedule;
 	
 	
 	public ConsultationEntity() {
@@ -27,14 +29,15 @@ public class ConsultationEntity {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ConsultationEntity(int consultationId, String consultationPurpose, String consultationResult) {
+	public ConsultationEntity(int consultationId, String consultationPurpose, String consultationResult, Set<ScheduleEntity> schedule) {
 		super();
 		this.consultationid = consultationId;
 		this.consultationpurpose = consultationPurpose;
 		this.consultationresult = consultationResult;
+		this.schedule = schedule;
 	}
 
-
+	
 
 
 	public int getConsultationId() {
@@ -69,12 +72,20 @@ public class ConsultationEntity {
 		return consultationresult;
 	}
 
-
-
-
 	public void setConsultationResult(String consultationResult) {
 		this.consultationresult = consultationResult;
 	}
+	
+	
+	public Set<ScheduleEntity> getSchedule() {
+		return schedule;
+	}
+
+
+	public void setSchedule(Set<ScheduleEntity> schedule) {
+		this.schedule = schedule;
+	}
+
 	
 	
 	

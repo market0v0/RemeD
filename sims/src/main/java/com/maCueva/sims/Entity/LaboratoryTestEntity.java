@@ -22,7 +22,6 @@ public class LaboratoryTestEntity {
 	private Set <ScheduleEntity> schedule;
 	
 	
-	
 	@OneToOne(cascade= CascadeType.MERGE)
 	private ResultEntity result;
 	
