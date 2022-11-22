@@ -1,4 +1,4 @@
-package com.glajera.sims.Controller;
+package com.maCueva.sims.Controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.glajera.sims.Entity.RecordEntity;
-import com.glajera.sims.Service.RecordService;
+import com.maCueva.sims.Entity.RecordEntity;
+import com.maCueva.sims.Service.RecordService;
 
 
 @RestController
