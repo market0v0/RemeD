@@ -1,10 +1,16 @@
 
 package com.maCueva.sims.Entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -23,6 +29,9 @@ public class ConsultationEntity {
 	@OneToMany(cascade= CascadeType.MERGE)
 	private Set <ScheduleEntity> schedule;
 	
+	@ManyToOne
+	@JoinColumn(name="patientId")
+	PatientEntity patient;
 	
 	public ConsultationEntity() {
 		super();

@@ -26,6 +26,10 @@ public class LaboratoryTestEntity {
 	private ResultEntity result;
 	
 	
+	@ManyToOne
+	@JoinColumn(name="patientId")
+	PatientEntity patient;
+	
 	public LaboratoryTestEntity() {
 		super();
 		// TODO Auto-generated constructor stub
