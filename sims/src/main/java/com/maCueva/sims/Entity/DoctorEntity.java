@@ -27,6 +27,7 @@ public class DoctorEntity {
 	 	@OneToMany
 	    private Set <ConsultationEntity> consultation;
 	 	
+	 	
 	 	@OneToMany
 	    private Set <RecordEntity> record;
 	 	
@@ -43,9 +44,6 @@ public class DoctorEntity {
 			this.consultation = consultation;
 			this.record = record;
 		}
-
-
-
 
 		public int getDoctorId() {
 			return doctorId;
