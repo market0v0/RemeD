@@ -33,20 +33,31 @@ public class ConsultationEntity {
 	@JoinColumn(name="patientId")
 	PatientEntity patient;
 	
+	@ManyToOne
+	@JoinColumn(name="doctorId")
+	DoctorEntity doctor;
+	
 	public ConsultationEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ConsultationEntity(int consultationId, String consultationPurpose, String consultationResult, Set<ScheduleEntity> schedule) {
+	
+	
+
+
+	public ConsultationEntity(int consultationid, String consultationpurpose, String consultationresult,
+			Set<ScheduleEntity> schedule, PatientEntity patient) {
 		super();
-		this.consultationid = consultationId;
-		this.consultationpurpose = consultationPurpose;
-		this.consultationresult = consultationResult;
+		this.consultationid = consultationid;
+		this.consultationpurpose = consultationpurpose;
+		this.consultationresult = consultationresult;
 		this.schedule = schedule;
+		this.patient = patient;
 	}
 
-	
+
+
 
 
 	public int getConsultationId() {
@@ -93,6 +104,22 @@ public class ConsultationEntity {
 
 	public void setSchedule(Set<ScheduleEntity> schedule) {
 		this.schedule = schedule;
+	}
+
+
+
+
+
+	public PatientEntity getPatient() {
+		return patient;
+	}
+
+
+
+
+
+	public void setPatient(PatientEntity patient) {
+		this.patient = patient;
 	}
 
 	
