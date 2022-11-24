@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,18 +20,31 @@ public class ScheduleEntity {
 	private String scheduletime;
 	private String schedulestatus;
 	
+	@ManyToOne
+	@JoinColumn(name="labtestid")
+	LaboratoryTestEntity labtest;
+	
+	@ManyToOne
+	@JoinColumn(name="consultationid")
+	ConsultationEntity consultation;
+	
 	public ScheduleEntity () {};
 	
-	
-	public ScheduleEntity(int scheduleid, String scheduledate, String scheduletime, String schedulestatus) {
+	public ScheduleEntity(int scheduleid, String scheduledate, String scheduletime, String schedulestatus,
+			LaboratoryTestEntity labtest, ConsultationEntity consultation) {
 		super();
 		this.scheduleid = scheduleid;
 		this.scheduledate = scheduledate;
 		this.scheduletime = scheduletime;
 		this.schedulestatus = schedulestatus;
+		this.labtest = labtest;
+		this.consultation = consultation;
 	}
-	
-	
+
+
+
+
+
 	@Override
 	public String toString() {
 		return "ScheduleEntity [scheduleid=" + scheduleid + ", scheduledate=" + scheduledate + ", scheduletime="
@@ -58,6 +73,22 @@ public class ScheduleEntity {
 	}
 	public void setSchedulestatus(String schedulestatus) {
 		this.schedulestatus = schedulestatus;
+	}
+
+	public LaboratoryTestEntity getLabtest() {
+		return labtest;
+	}
+
+	public void setLabtest(LaboratoryTestEntity labtest) {
+		this.labtest = labtest;
+	}
+
+	public ConsultationEntity getConsultation() {
+		return consultation;
+	}
+
+	public void setConsultation(ConsultationEntity consultation) {
+		this.consultation = consultation;
 	}
 	
 	
