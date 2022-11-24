@@ -1,6 +1,8 @@
 package com.maCueva.sims.Entity;
 
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,7 @@ public class PatientEntity {
     
     @OneToOne(cascade = CascadeType.MERGE)
 	private UserEntity User;
+    
     private double weight;
     private String height;
     
@@ -20,11 +23,16 @@ public class PatientEntity {
     
     @OneToMany
     private Set <LaboratoryTestEntity> labtest;
+    
+    @OneToMany
+    private Set <RecordEntity> record;
 
     public PatientEntity() {
     }
 
-	public PatientEntity(int patientId, UserEntity user, double weight, String height, Set<ConsultationEntity> consultation, Set<LaboratoryTestEntity> labtest) {
+
+	public PatientEntity(int patientId, UserEntity user, double weight, String height,
+			Set<ConsultationEntity> consultation, Set<LaboratoryTestEntity> labtest, Set<RecordEntity> record) {
 		super();
 		this.patientId = patientId;
 		User = user;
@@ -32,7 +40,9 @@ public class PatientEntity {
 		this.height = height;
 		this.consultation = consultation;
 		this.labtest = labtest;
+		this.record = record;
 	}
+
 
 	public int getPatientId() {
 		return patientId;
@@ -83,5 +93,17 @@ public class PatientEntity {
 	public void setLabtest(Set<LaboratoryTestEntity> labtest) {
 		this.labtest = labtest;
 	}
+
+
+	public Set<RecordEntity> getRecord() {
+		return record;
+	}
+
+
+	public void setRecord(Set<RecordEntity> record) {
+		this.record = record;
+	}
+	
+	
 
 }
