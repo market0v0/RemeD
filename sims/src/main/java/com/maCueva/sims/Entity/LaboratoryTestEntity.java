@@ -36,15 +36,20 @@ public class LaboratoryTestEntity {
 	}
 
 
+
+
 	public LaboratoryTestEntity(int labtestid, String labtesttype, String labteststatus, Set<ScheduleEntity> schedule,
-			ResultEntity result) {
+			ResultEntity result, PatientEntity patient) {
 		super();
 		this.labtestid = labtestid;
 		this.labtesttype = labtesttype;
 		this.labteststatus = labteststatus;
 		this.schedule = schedule;
 		this.result = result;
+		this.patient = patient;
 	}
+
+
 
 
 	public int getLabtestid() {
@@ -94,6 +99,20 @@ public class LaboratoryTestEntity {
 
 	public void setResult(ResultEntity result) {
 		this.result = result;
+	}
+
+
+
+
+	public PatientEntity getPatient() {
+		return patient;
+	}
+
+
+
+
+	public void setPatient(PatientEntity patient) {
+		this.patient = patient;
 	}
 
 
