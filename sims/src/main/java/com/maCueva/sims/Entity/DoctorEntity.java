@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -31,19 +32,26 @@ public class DoctorEntity {
 	 	@OneToMany
 	    private Set <RecordEntity> record;
 	 	
+	 	@ManyToMany
+	 	private Set <HospitalEntity> hospital;
+	 	
 		public DoctorEntity() {
 			super();
 		}
 
+
 		public DoctorEntity(int doctorId, String specialty, UserEntity user, Set<ConsultationEntity> consultation,
-				Set<RecordEntity> record) {
+				Set<RecordEntity> record, Set<HospitalEntity> hospital) {
 			super();
 			this.doctorId = doctorId;
 			this.specialty = specialty;
 			this.user = user;
 			this.consultation = consultation;
 			this.record = record;
+			this.hospital = hospital;
 		}
+
+
 
 		public int getDoctorId() {
 			return doctorId;
@@ -81,7 +89,18 @@ public class DoctorEntity {
 		public void setRecord(Set<RecordEntity> record) {
 			this.record = record;
 		}
+
+
+		public Set<HospitalEntity> getHospital() {
+			return hospital;
+		}
+
+
+		public void setHospital(Set<HospitalEntity> hospital) {
+			this.hospital = hospital;
+		}
 	 	
+		
 		
 		
 }
