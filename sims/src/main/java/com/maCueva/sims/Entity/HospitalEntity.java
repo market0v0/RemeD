@@ -2,7 +2,6 @@ package com.maCueva.sims.Entity;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +11,8 @@ import javax.persistence.Table;
 
 
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+
 
 @Entity
 @Table(name = "tbl_hospital")
@@ -24,22 +24,29 @@ public class HospitalEntity {
  	private String hospitalPassword;
  	private String hospitalName;
  	private String address;
- 	@OneToMany(cascade = CascadeType.MERGE)
- 	private Set<DoctorEntity> doctors;
+ 	
+ 	
+ 	@ManyToMany(mappedBy = "hospital")
+ 	private Set<DoctorEntity> doctor;
+ 	
+ 	
  	
 	public HospitalEntity() {
 		super();
 	}
+	
+	
 
-	public HospitalEntity(int hospitalId, String hospitalUsername, String hospitalPassword, String hospitalName,
-			String address, Set<DoctorEntity> doctors) {
+	public HospitalEntity(int hospitalId, String hospitalUsername, 
+			String hospitalPassword, String hospitalName, String address, 
+			Set<DoctorEntity> doctor) {
 		super();
 		this.hospitalId = hospitalId;
 		this.hospitalUsername = hospitalUsername;
 		this.hospitalPassword = hospitalPassword;
 		this.hospitalName = hospitalName;
 		this.address = address;
-		this.doctors = doctors;
+		this.doctor = doctor;
 	}
 
 	public int getHospitalId() {
@@ -80,12 +87,12 @@ public class HospitalEntity {
 		this.address = address;
 	}
 
-	public Set<DoctorEntity> getDoctors() {
-		return doctors;
+	public Set<DoctorEntity> getDoctor() {
+		return doctor;
 	}
 
-	public void setDoctors(Set<DoctorEntity> doctors) {
-		this.doctors = doctors;
+	public void setDoctors(Set<DoctorEntity> doctor) {
+		this.doctor = doctor;
 	}
 
 	
