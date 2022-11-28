@@ -6,6 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import { Tabs } from '@mui/material';
+import AccountMenu from '../Components/DropMenu';
 
 type Features = {
     components:React.ReactNode[];
@@ -29,6 +30,9 @@ export default function LabTabs(props:Features) {
       <TabContext value={value} >
         <Box sx={{backgroundColor: "#FF4B4B", color: "#ffffff" , height: "50%"}} >
         <img src={'images/remedlogo.png'} alt="REMED Logo" width={40} height={40} style={{float: "left", paddingTop: '10px', paddingLeft: '40px'}}/>
+        <div className='AppSetting' style={{float: "right"}}>
+        <AccountMenu/>
+        </div>
           <TabList onChange={handleChange} sx={{  display:'inline-block', paddingLeft: '40px', paddingTop: '10px',
                                               "& Button.Mui-selected": {color: "gray",
                                                                        fontWeight: "bold", 
