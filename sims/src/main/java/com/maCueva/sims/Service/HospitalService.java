@@ -39,7 +39,7 @@ public class HospitalService {
 	            	//get hospital
 	            	hospital = hrepo.findById(hospitalID).get();
 	            	//gets the set of doctors
-	            	doctors = hospital.getDoctors();
+	            	doctors = hospital.getDoctor();
 	            	//adds the new doctor
 	            	doctors.add(newdoctor);
 	            	// set the new Set of doctors

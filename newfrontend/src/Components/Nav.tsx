@@ -25,9 +25,9 @@ import './ComponentsCSS.css';
 import * as React from 'react';
 import {Box, Tab} from '@mui/material';
 import {TabContext, TabList, TabPanel} from '@mui/lab';
-import BookAppointment from './BookAppointment';
-import ReserveSlot from './ReserveSlot';
-import CheckMedHistory from './CheckMedHistory';
+import BookAppointment from '../RemeDPatientFeatures/BookAppointment';
+import ReserveSlot from '../RemeDPatientFeatures/ReserveSlot';
+import CheckMedHistory from '../RemeDPatientFeatures/CheckMedHistory';
 
 
 
