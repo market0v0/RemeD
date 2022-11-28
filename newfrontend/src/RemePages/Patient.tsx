@@ -11,7 +11,7 @@ function Patient() {
       <CheckMedHistory />,
       <ReserveSlot/>
         ];
-      const featureName = ["Book Appointment","Medical History", "Labarotory slot"]
+      const featureName = ["Book Appointment for In Person Consultation", "Check Medical History", "Reserve Slot for Medical Laboratory Test"]
   return (
     <div>
       
