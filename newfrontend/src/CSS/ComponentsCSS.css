@@ -19,10 +19,11 @@ h3{
     margin-bottom: 30px;
 }
 
-.Tab{
+.AppBar{
     font-family: 'Sarala', sans-serif;
     color: white;
 }
+/* sx={{color: "#ffffff", padding: "15px 30px", fontFamily: 'Sarala, sans-serif', textTransform:'capitalize'}} */
 
 .TextField{ 
     width: 270px;
