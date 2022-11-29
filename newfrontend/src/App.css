@@ -33,6 +33,34 @@
   padding-right: 30px;
 }
 
+.LoginLogo{
+position: absolute;
+width: 225px;
+height: 205px;
+left: 100px;
+}
+
+.LogInUsername{
+position: absolute;
+width: 260px;
+height: 45px;
+left: 750px;
+top: 370px;
+
+}
+.LogInPassword{
+  position: absolute;
+  width: 260px;
+  height: 45px;
+  left: 750px;
+  top: 430px;
+  
+  }
+.DropMenu{
+  float: right;
+  padding-top: 10px;
+  padding-right: 30px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

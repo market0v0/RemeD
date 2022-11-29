@@ -2,38 +2,85 @@
 import * as React from 'react';
 import RemeDTextFeild from '../BasicComponent/TextBox';
 import styled from '@emotion/styled';
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
+import '../CSS/ComponentsCSS.css';
+
+import {
+    BrowserRouter as Router,
+    Route,
+    redirect,
+} from "react-router-dom";
+import { UserIDContext } from '../Context/UserIdContext';
 
 
+const StyledTextField = styled(TextField)({
+    '& .MuiOutlinedInput-root': {
+        "& > fieldset": { borderColor: "#FF4B4B" },
+    }
+});
+let i = 0;
 export default function RemeDLogin() {
-    const [texMessage, setMessage] = React.useState('');
+    const getUserID = React.useContext(UserIDContext);
+    const [username, setUsername] = React.useState('');
+    const [password, setPassword] = React.useState('');
 
-    const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-        setMessage(event.target.value);
+    const handleChangeUsername = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+        setUsername(event.target.value);
         console.log(event.target.value);
     };
+    const handleChangePassword = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+        setPassword(event.target.value);
+        console.log(event.target.value);
+    };
+    const handlerClickLogin = () => {
+        console.log(username, password)
+        
+        if(username === "mark" && password === "123"){
+            
+            getUserID?.CatchUserID(1)
+            
+            console.log(getUserID!.userID)
+            if(getUserID!.userID > 0){
+                alert("mark")
+            }
+        };
+
+    }
     return (
         <div>
             <div>
-                <RemeDLoginLogo>
-                    <img src={'/images/RemeDLogin.png'} alt="Image" style={{ maxHeight: '300px', minHeight: '300px' }} />
-                </RemeDLoginLogo>
+                <div className='LoginLogo'>
+                    <img src={'/images/remedlogo.png'} alt="Image"
+                        style={{
+                            maxHeight: '300px',
+                            minHeight: '300px'
+                        }} />
+                </div>
 
-       
-                    <TextDisplay>
-                        <p> Discover Top Doctors</p>
-                    </TextDisplay>
-                    <UserTextField >
-                        <RemeDTextFeild textLabel={"Username"} textID={"outlined-password-input"} textType={""} />
-                    </UserTextField>
 
-                    <PassTextField>
-                        <RemeDTextFeild textLabel={"Password"} textID={"outlined-password-input"} textType={"password"} />
-                    </PassTextField>
-                    <LoginButton>
-                    <Button variant='contained' sx={{ background: 'red', color: 'white' }}>Log in</Button>
-                </LoginButton>
-          
+                <TextDisplay>
+                    <p> Discover Top Doctors <br/> {getUserID?.userID}</p>
+                </TextDisplay>
+
+                <div className='LogInUsername'>
+                    <StyledTextField
+                        id="username"
+                        label="Username"
+                        className='TextField' onChange={handleChangeUsername} value={username} />
+                </div>
+
+                <div className='LogInPassword'>
+                    <StyledTextField
+                        id="password"
+                        label="Password"
+                        type={"password"}
+                        className='TextField' onChange={handleChangePassword} value={password} />
+                </div>
+                <div style={{ position: "absolute", left: "850px", top: "500px" }}>
+                    <Button onClick={handlerClickLogin} variant='contained'
+                        sx={{ background: 'red', color: 'white' }}>Log in</Button>
+                </div>
+
 
             </div>
 
@@ -43,22 +90,7 @@ export default function RemeDLogin() {
         </div>
     );
 }
-const UserTextField = styled.div`
-position: absolute;
-width: 260px;
-height: 45px;
-left: 750px;
-top: 370px;
 
-`;
-const PassTextField = styled.div`
-position: absolute;
-width: 260px;
-height: 45px;
-left: 750px;
-top: 450px;
-
-`;
 
 const TextDisplay = styled.div`
   position: absolute;
@@ -81,41 +113,9 @@ const TextDisplay = styled.div`
 `;
 
 
-const LoginButton = styled.div`
-position: absolute;
-width: 163px;
-height: 43px;
-left: 825px;
-top: 530px;
-
-`;
-
-const RemeDLoginLogo = styled.div`
-position: absolute;
-width: 225px;
-height: 205px;
-left: 100px;
-`;
 
 
-const RemeDEllipse2 = styled.div`
-position: absolute;
-width: 2056px;
-height: 2470px;
-left: 425px;
-top: -324px;
-border-radius: 50%;
-background: linear-gradient(39.19deg, #F8EEEE 18.57%, rgba(255, 255, 255, 0) 78.28%);
-
-`;
-const RemeDEllipse1 = styled.div`
-position: onframe;
-width: 2056px;
-height: 2470px;
-left: 400px;
-top: -700px;
-border-radius: 70%;
-background: red;
-
-`;
+function render() {
+    throw new Error('Function not implemented.');
+}
 
