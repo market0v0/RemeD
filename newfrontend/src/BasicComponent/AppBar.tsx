@@ -7,7 +7,10 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import { Tabs } from '@mui/material';
-import AccountMenu from '../Components/DropMenu';
+import AccountMenu from './DropMenu';
+import { Routes, Route } from 'react-router-dom';
+import RemeDLogin from '../RemePages/LoginPage';
+import Patient from '../RemePages/PatientPage';
 
 type Features = {
   components: React.ReactNode[];
@@ -27,14 +30,17 @@ export default function LabTabs(props: Features) {
 
   return (
     <Box sx={{ typography: 'body1', bgcolor: 'background.paper', }}>
-
+      <Routes>
+        <Route path="/login" element={<RemeDLogin />} />
+        <Route path='/patient' element={<Patient />} />
+      </Routes>
       <TabContext value={value} >
         <Box sx={{ backgroundColor: "#FF4B4B", color: "#ffffff", height: "70px" }} >
           <img src={'/images/remedlogo.png'} alt="REMED Logo" width={80} height={70} style={{ float: "left" }} />
           <div className='DropMenu'>
             <AccountMenu />
           </div>
-          
+
           <TabList onChange={handleChange} sx={{
             display: 'inline-block',
             paddingLeft: '0px',

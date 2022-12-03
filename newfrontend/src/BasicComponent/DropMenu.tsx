@@ -11,6 +11,9 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import { Routes, Route } from 'react-router-dom';
+import Patient from '../RemePages/PatientPage';
+import RemeDLogin from '../RemePages/LoginPage';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -18,11 +21,18 @@ export default function AccountMenu() {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+  const LogOutClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
   const handleClose = () => {
     setAnchorEl(null);
   };
   return (
     <React.Fragment>
+      <Routes>
+                <Route path="/login" element={<RemeDLogin/>} />
+                <Route path='/patient' element={<Patient/>}/>
+       </Routes>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
       
         <Tooltip title="Account settings">
@@ -82,11 +92,11 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={LogOutClick}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          <a  href={"/login"} style={{ color: "white" }}>Log out</a>
         </MenuItem>
       </Menu>
     </React.Fragment>

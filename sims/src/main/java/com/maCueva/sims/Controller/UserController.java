@@ -29,6 +29,11 @@ public class UserController {
     public List<UserEntity>displayAll(){
         return userv.displayAll();
     }
+    
+    @GetMapping("/userType")
+    public int UserType(@RequestParam int id) throws Exception{
+       return userv.UserType(id);
+     }
 
 
 }

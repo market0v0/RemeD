@@ -26,22 +26,30 @@ public class UserService {
         try {        	
         if(urepo.findByUsername(username)!= null) {        	
         		if(pass.equals(password)) {
-        			if(urepo.findByUsername(username).getUserType() == 1) {
-        				valid = 1;
-        				return valid;
-        			}
-        			else {
-        				valid = 2;
-        				return valid;
-        			}
+        			return urepo.findByUsername(username).getUserId();
         		
         		}
         }	
         }catch(NoSuchElementException nex) {
             //throws an error if the id does not exist
-            throw new Exception("ID Number "+ username + " does not exist!");
+            return 0;
         }
-		return valid;
+		return 0;
+        
+     }
+    
+    public int UserType(int id) throws Exception{
+  
+        try {        	
+        if(urepo.findById(id) != null) {        	
+        
+        	return urepo.findById(id).get().getUserType();
+        }	
+        }catch(NoSuchElementException nex) {
+            //throws an error if the id does not exist
+            throw new Exception("");
+        }
+		return 0;
         
      }
 

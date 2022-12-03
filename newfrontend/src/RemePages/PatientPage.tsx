@@ -2,6 +2,7 @@ import React from 'react'
 import LabTabs from '../BasicComponent/AppBar'
 import BookAppointment from '../RemeDPatientFeatures/BookAppointment';
 import CheckMedHistory from '../RemeDPatientFeatures/CheckMedHistory';
+import CheckSchedule from '../RemeDPatientFeatures/CheckSchedules';
 import ReserveSlot from '../RemeDPatientFeatures/ReserveSlot';
 
 
@@ -9,9 +10,10 @@ function Patient() {
     const componentArray = [
       <BookAppointment />,
       <CheckMedHistory />,
-      <ReserveSlot/>
+      <ReserveSlot/>,
+      <CheckSchedule/>
         ];
-      const featureName = ["Book Appointment for In Person Consultation", "Check Medical History", "Reserve Slot for Medical Laboratory Test"]
+      const featureName = ["Book Appointment for In Person Consultation", "Check Medical History", "Reserve Slot for Medical Laboratory Test","Check Schedule"]
   return (
     <div>
       

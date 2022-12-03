@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import MainScreen from './Components/MainScreen';
-import Patient from './RemePages/Patient';
-import RemeDLogin from './RemePages/Login';
-import UserIdContext from './Context/UserIdContext';
+import Patient from './RemePages/PatientPage';
+import RemeDLogin from './RemePages/LoginPage';
+import { Route, Routes } from 'react-router-dom';
+
+import { useContext } from 'react';
+import { UserIDContext } from './Context/UserIdContext';
 
 
 
+
+let counter = 0
 function App() {
+ {/** 
+  const userid = useContext(UserIDContext );
+  let id = Number(CheckLogIn('mark','1234'));
+  if(id > 0){
+    counter++;
 
+    if(counter === 1){
+      console.log(id)
+    }
+  }
+
+ */}
  
+ 
+ // console.log(userid?.userID)
+
   return (
     <div>
-      {/* 
-      <Patient/>
-      */}
-      <UserIdContext>
-      <RemeDLogin/>
-      </UserIdContext>
+
+      <Routes>
+      <Route path='/' element={<RemeDLogin/>}/>
+      <Route path='/login' element={<RemeDLogin/>}/>
+      <Route path='/patient' element={<Patient/>}/>
+      </Routes>
+
     </div>
   );
 }

@@ -10,7 +10,7 @@ export const UserIDContext = createContext<UserID | null>(null);
 function UserIdContext(props: { children: React.ReactNode }) {
 
   const [userID, setUserID] = useState<number>(0);
-  let id = 0;
+  useEffect(() => { setUserID(userID) }, [])
 
   const CatchUserID = (catchID: number) => {
     setUserID(catchID);
@@ -21,7 +21,6 @@ function UserIdContext(props: { children: React.ReactNode }) {
       <UserIDContext.Provider value={{ userID, CatchUserID }}>
         {props.children}
       </UserIDContext.Provider>
-      {userID}
     </div>
   )
 }

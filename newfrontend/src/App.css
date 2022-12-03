@@ -27,44 +27,158 @@
 .App-link {
   color: #61dafb;
 }
-.AppSetting{
+
+.AppSetting {
   float: right;
   padding-top: 10px;
   padding-right: 30px;
 }
 
-.LoginLogo{
-position: absolute;
-width: 225px;
-height: 205px;
-left: 100px;
+.LoginLogo {
+  position: fixed;
+
+  width: 225px;
+  height: 205px;
+  left: 10%;
+  top: 30%;
 }
 
-.LogInUsername{
-position: absolute;
-width: 260px;
-height: 45px;
-left: 750px;
-top: 370px;
 
+.iamges {
+  position: relative;
+  max-width: 100%;
+  height: auto;
 }
-.LogInPassword{
-  position: absolute;
-  width: 260px;
-  height: 45px;
-  left: 750px;
-  top: 430px;
+
+.LogInPane {
   
-  }
-.DropMenu{
+  width: 200px;
+  height: 200px;
+  padding-top: 100px;
+  left: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   height: 80vh;
+  width: 200vh;
+}
+
+.alignPopUp {
+  align-content: center;
+  justify-content: center;
+  height: 80vh;
+  width: 200vh;
+}
+
+.DropMenu {
   float: right;
   padding-top: 10px;
   padding-right: 30px;
+}
+
+.LogInBg {
+  min-height: 100vh;
+
+  background: rgb(255, 0, 0);
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.2780462526807598) 0%, rgba(228, 0, 4, 0.5777661406359419) 0%, rgba(2, 0, 36, 0) 46%, rgba(121, 9, 9, 0) 86%);
+}
+
+.LogInBgtry {
+  height: 100vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.Schedulebuttons{
+
+width: 302px;
+height: 80px;
+left: 895px;
+top: 320px;
+}
+
+.overlay.visible {
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.landingpageText {
+
+  position: fixed;
+  width: auto;
+  max-width: 20px;
+  min-width: 100px;
+  height: auto;
+  right: 10%;
+  top: 3%;
+  size: 100% 100%;
+
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 100px;
+  /* or 100% */
+
+  text-align: center;
+  letter-spacing: -1px;
+
+  color: #ff0000;
+
+}
+
+.craeteAccount {
+  font-weight: 700;
+  color: #ff0000;
+}
+
+@media screen and (max-width: 1024px) {
+  .adjustLogin {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .LogInScreenSmall {
+    position: absolute;
+    align-content: center;
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .HideText {
+    visibility: hidden;
+  }
+}
+
+.LogInsmall {
+  position: absolute;
+  align-content: center;
+  background-color: #ff0000;
+}
+
+
+.landingbuttons{
+  position: sticky;
 }
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
